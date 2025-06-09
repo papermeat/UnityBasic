@@ -1,39 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+// 주석은 이거
+/* 긴 글 주석은
+이거 */
 
 public class Test : MonoBehaviour
 {
-    public Button Btn_button;
-    public TextMeshProUGUI infoText;
-    public string text;
-
-    public string Name = "홍길동";
-    int age = 99;
-    string MBTI = "INTJ";
-
-    int count = 0;
-
-    void Awake()
-    {
-        UnityEngine.Debug.Log($"나의 이름은 {Name}입니다.");
-
-        // Btn_button.onClick.AddListener(OnButtonClick);
+        void OnEnable()
+        {
+        Random.InitState(7); // 랜덤한 시드값을 고정
+            Debug.Log(Random.Range(1, 100));
+            // 1 이상 100 미만의 랜덤한 값을 만들겠다.
+        }
+        // Debug.Log("안녕하세요");
+        // Debug.Log("오늘까지 화이팅하면 내일 쉴 수 있어요!");
     }
 
-    public void OnButtonClick()
-    {
-        // infoText.text = string.Empty;
-        // infoText.text = "";
-        infoText.text = "저의 이름은" + name + "입니다.\n";
 
-        infoText.text += "저의 이름은" + name + "입니다.\n";
-        infoText.text += $"저의 나이는 {age} 입니다. \n";
-        infoText.text += $"저의 MBTI는 {MBTI} 입니다";
+
+
+/*
+public class Player
+{
+    private int playerLevel = 10;
+
+    public int Level()
+    {
+        return playerLevel;
     }
 }
 
+public class Monster
+{
+    private int monsterLevel;
 
+    public void SetLevel(int _playerLevel)
+    {
+        monsterLevel = _playerLevel;
+    }
+}
 
+public class Game
+{
+    Player A;
+    Monster B;
+
+    void MonsterSpawn() // 몬스터
+    {
+        B.SetLevel(A.Level());
+    }
+}
+*/
